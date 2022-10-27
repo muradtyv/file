@@ -14,8 +14,6 @@ public class Main {
         User user =(User) FileUtility.readObjectFile("object.obj");
         System.out.println(user.name);
 
-
-
 //        FileUtility.writeObjectToFile(user, "object.obj");
     }
 }

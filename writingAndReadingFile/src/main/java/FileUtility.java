@@ -1,4 +1,7 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FileUtility {
 
@@ -71,5 +74,15 @@ public class FileUtility {
         }finally {
             return obj;
         }
+    }
+
+    public static void writeBytesNio(byte[] data, String fileName) throws Exception{
+        Path fileePath = Paths.get(fileName);
+        Files.write(fileePath, data);
+    }
+    public static byte[] readByNio(String fileName) throws Exception{
+        Path filePath = Paths.get(fileName);
+        byte[] data = Files.readAllBytes(filePath);
+        return data;
     }
 }
